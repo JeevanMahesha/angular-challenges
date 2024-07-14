@@ -20,11 +20,15 @@ import { ListItemComponent } from '../list-item/list-item.component';
         *ngIf="type === CardType.STUDENT"
         src="assets/img/student.webp"
         width="200px" />
+      <img
+        *ngIf="type === CardType.CITY"
+        src="assets/img/city.png"
+        width="200px" />
 
       <section>
         <app-list-item
           *ngFor="let item of list"
-          [name]="item.firstName"
+          [name]="item.firstName || item.name"
           [id]="item.id"
           [type]="type"></app-list-item>
       </section>
